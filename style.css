@@ -5,17 +5,17 @@ html,
 body {
     background: #4D724F;
     font-family: Abel, Arial, Verdana, sans-serif;
-    margin: 1;
-    padding: 1;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .card {
@@ -29,6 +29,7 @@ body {
     position: relative;
     margin: 1.2rem;
     transform: scale(1.5);
+
 }
 
 .card h1 {
@@ -37,17 +38,19 @@ body {
 
 .card .additional {
     position: absolute;
-    width: 150px;
     height: 100%;
     background: linear-gradient(#9ACB9C, #A7D2A8);
     transition: width 0.4s;
     overflow: hidden;
     z-index: 2;
+    display: flex;
+    flex-direction: row;
 }
 
 .card:hover .additional {
     width: 100%;
     border-radius: 0 5px 5px 0;
+    
 }
 
 .card .additional .user-card {
@@ -55,10 +58,13 @@ body {
     height: 100%;
     position: relative;
     float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .card .additional .user-card .level {
-    top: 15%;
     color: #000;
     font-weight: bold;
     text-transform: uppercase;
@@ -72,11 +78,6 @@ body {
 
 
 .card .additional .more-info {
-    width: 300px;
-    float: left;
-    position: absolute;
-    left: 150px;
-    height: 100%;
 }
 
 .card .additional .more-info h1 {
@@ -146,4 +147,28 @@ body {
     bottom: 1rem;
     right: 1rem;
     font-size: 0.9em;
+}
+img
+{
+    width: 150px;
+}
+@media screen and (max-width: 500px) {
+    .card {
+        width: 90%;
+        transform: scale(1);
+
+    }
+    .additional
+    {
+        width: 0px;
+    }
+
+    .card .additional .stats div.title {
+        font-size: 1rem;
+
+    }
+    .user-card
+    {
+        display: none !important;
+    }
 }

@@ -165,9 +165,15 @@ img
     }
     .additional
     {
-        width: 0px;
+        width: 0px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-
+    .card:hover .additional {
+        width: 100% !important;
+        
+    }
     .card .additional .stats div.title {
         font-size: 1rem;
 
